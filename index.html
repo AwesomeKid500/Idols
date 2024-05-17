@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <header>
+        <ul class="nav_links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Korean</a></li>
+            <li><a href="#">Chinese</a></li>
+
+        </ul>
+    </header>
+
+
+    <div class="container">
+        <div class="heading">
+            <h3>Photo <span>Gallery</span></h3>
+        </div>
+
+        <div class="search-bar">
+            <span class=" search-icon material-symbols-outlined">search</span>
+            <input type="text" class="search-input" placeholder=Search id="search-box">    
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="active" data-title="all">Show all</button>
+            <button data-title="idol">Idols</button>
+            <button data-title="actor">Actors</button>
+        </div>
+
+        <div class="box">
+            <div class="dream card">
+                <img src="/images/Exo/sehun.jpg" alt="" data-title="sehun exo idol">
+                <img src="/images/Exo/baekhyun.jpg" alt="" data-title="baekhyun exo idol">
+                <img src="/images/Exo/exo.jpg" alt="" data-title="group exo idol">
+
+                
+
+            </div>
+            
+            <div class="dream card">
+                <img src="/images/Exo/chanyeol1.jpg" alt="" data-title="chanyeol exo  idol">
+                <img src="/images/Exo/chen.jpg" alt="" data-title="chen exo  idol">
+                <img src="/images/seventeen/mingyu.jpg" alt="" data-title="mingyu seventeen  idol">
+                
+
+            </div>
+
+            <div class="dream card">
+                <img src="/images/Exo/suho.jpg" alt="" data-title="suho exo  idol">
+                <img src="/images/Exo/xiumin.jpg" alt="" data-title="xiumin exo  idol">
+            </div>
+
+            <div class="dream card">
+                <img src="/images/Exo/kai.jpg" alt="" data-title="kai exo  idol">
+                <img src="/images/Exo/D.O.jpg" alt="" data-title="do exo  idol">
+                <img src="/images/Exo/lay.jpg" alt="" data-title="lay exo  actor">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // search box
+        let SearchBox = document.querySelector('#search-box');
+        let images1 = document.querySelectorAll('.container .box .dream img');
+
+        SearchBox.oninput = () =>{
+            images1.forEach(hide => hide.style.display = 'none');
+            let value = SearchBox.value;
+            images1.forEach(filter =>{
+                let title = filter.getAttribute('data-title');
+                if(value.toLowerCase().split("").every(item =>title.toLowerCase().includes(item))){
+                    filter.style.display = 'flex';
+                }
+                if(SearchBox.value == ''){
+                    filter.style.display = 'flex';
+                }
+            });
+        }
+        
+        // filterable buttons
+        const filterButtons = document.querySelectorAll(".filter-buttons button");
+        const filterableCards = document.querySelectorAll(".container .box .dream img");
+        
+        console.log(filterButtons, filterableCards);
+
+        const filterimages = e => {
+            document.querySelector(".active").classList.remove("active");
+            e.target.classList.add("active");            
+
+            filterableCards.forEach(card =>{
+                card.classList.add("hide");
+
+                if(card.dataset.title === e.target.dataset.title || e.target.dataset.title === "all"){
+                    card.classList.remove("hide");
+                }
+            })
+        } 
+        // add click event for each button
+        filterButtons.forEach(button => button.addEventListener("click", filterimages));
+
+    </script>
+    
+</body>
+</html>
