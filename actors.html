@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Actors</title>
+    <link rel="stylesheet" href="actors.css">
 </head>
 <body>
+
     <header>
         <ul class="nav_links">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">Idols</a></li>
             <li><a href="actors.html">Actors</a></li>
-            <li><a href="to_do_list/to_do_list.html">List</a></li>
-
 
         </ul>
     </header>
-
 
     <div class="container">
         <div class="heading">
@@ -33,45 +30,36 @@
         <div class="filter-buttons">
             <button class="active" data-title="all">Show all</button>
             <button data-title="idol">Idols</button>
-            <button data-title="actor">Actors</button>            
-
+            <button data-title="actor">Actors</button>
         </div>
 
         <div class="box">
             <div class="dream card">
-                <img src="/images/Exo/sehun.jpg" alt="" data-title="sehun exo idol">
-                <img src="/images/Exo/baekhyun.jpg" alt="" data-title="baekhyun exo idol">
-                <img src="/images/Exo/exo.jpg" alt="" data-title="group exo idol">
-                <img src="/images/seventeen/" alt="" data-title="">
-
-
-                
-
-            </div>
-            
-            <div class="dream card">
-                <img src="/images/Exo/chanyeol1.jpg" alt="" data-title="chanyeol exo  idol">
-                <img src="/images/Exo/chen.jpg" alt="" data-title="chen exo  idol">
-                <img src="/images/seventeen/mingyu.jpg" alt="" data-title="mingyu seventeen  idol">
-                
+                <img src="/images/Actors/Chinese/Dylan Wang.jpg" alt="" data-title="dylan wang">
+                <img src="/images/Actors/Chinese/Yang Yang.jpg" alt="" data-title="yang yang">
+                               
 
             </div>
 
             <div class="dream card">
-                <img src="/images/Exo/suho.jpg" alt="" data-title="suho exo idol">
-                <img src="/images/Exo/xiumin.jpg" alt="" data-title="xiumin exo idol">
-                <img src="/images/Exo/xiumin.jpg" alt="" data-title="xiumin exo idol">
+                <img src="/images/Actors/Chinese/Greg Hsu.jpg" alt="" data-title="greg hsu">
+                              
 
             </div>
 
             <div class="dream card">
-                <img src="/images/Exo/kai.jpg" alt="" data-title="kai exo idol">
-                <img src="/images/Exo/D.O.jpg" alt="" data-title="do exo idol">
-                <img src="/images/Exo/lay.jpg" alt="" data-title="lay exo actor">
+                <img src="/images/Actors/Chinese/Hsu thassapak.jpg" alt="" data-title="hsu thassapak">
+                              
+
+            </div>
+
+            <div class="dream card">
+                <img src="/images/Actors/Chinese/Leo Wu2.jpg" alt="" data-title="leo wu">
+                             
+
             </div>
         </div>
     </div>
-    
     <script>
         // search box
         let SearchBox = document.querySelector('#search-box');
@@ -86,7 +74,7 @@
                     filter.style.display = 'flex';
                 }
                 if(SearchBox.value == ''){
-                    filter.style.display = 'grid';
+                    filter.style.display = 'flex';
                 }
             });
         }
@@ -113,6 +101,7 @@
         filterButtons.forEach(button => button.addEventListener("click", filterimages));
 
     </script>
+    
     
 </body>
 </html>
